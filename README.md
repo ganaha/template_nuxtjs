@@ -18,3 +18,11 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## 機能
+
+- SPAログイン
+    - template_laravel7 > sanctum> ログイン連携
+    - template_laravel7側でユーザー登録が必要
+- ページネーション
+    - [vuejs-paginate](https://github.com/lokyoung/vuejs-paginate)

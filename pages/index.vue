@@ -6,25 +6,21 @@
         template_nuxtjs
       </h1>
       <div class="links">
-        <nuxt-link
-          to="/login"
-          class="button--green"
-        >
-          Login
-        </nuxt-link>
+        <nuxt-link to="/login" class="button--green">Login</nuxt-link>
+        <nuxt-link to="/users" class="button--green">Pagination</nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from "~/components/Logo.vue";
 
 export default {
   components: {
     Logo
   }
-}
+};
 </script>
 
 <style>
@@ -38,16 +34,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
