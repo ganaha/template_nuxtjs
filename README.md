@@ -21,8 +21,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## 機能
 
-- SPAログイン
+- SPAログイン(Laravel Sanctum)
     - template_laravel7 > sanctum> ログイン連携
     - template_laravel7側でユーザー登録が必要
 - ページネーション
     - [vuejs-paginate](https://github.com/lokyoung/vuejs-paginate)
+- Auth module x laravel Sanctum

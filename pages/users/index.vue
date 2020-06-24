@@ -1,5 +1,7 @@
 <template>
   <div>
+    <nuxt-link to="/login" class="button--green">Login</nuxt-link>
+    <nuxt-link to="/logout" class="button--green">Logout</nuxt-link>
     <table class="ui celled table">
       <thead>
         <tr>
@@ -47,13 +49,15 @@ export default {
       this.pagination = await this.getUsers(num);
     },
     async getUsers(num = 1) {
-      return await this.$axios.get("/api/users", {
-        params: {
-          page: num
-        }
-      }).then((res) => {
+      return await this.$axios
+        .get("/api/users", {
+          params: {
+            page: num
+          }
+        })
+        .then(res => {
           return res.data;
-      });
+        });
     }
   }
 };

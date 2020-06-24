@@ -7,7 +7,7 @@
       </h1>
       <div class="links">
         <nuxt-link to="/login" class="button--green">Login</nuxt-link>
-        <nuxt-link to="/users" class="button--green">Pagination</nuxt-link>
+        <nuxt-link to="/users" class="button--green">Users</nuxt-link>
       </div>
     </div>
   </div>

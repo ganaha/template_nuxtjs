@@ -50,6 +50,31 @@ export default {
   axios: {
     baseURL: "http://localhost:8000"
   },
+  auth: {
+    redirect: {
+      login: "/login",
+      logout: "/",
+      callback: "/login",
+      home: "/"
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/api/login",
+            method: "post",
+            propertyName: false
+          },
+          logout: { url: "/api/logout", method: "get" },
+          user: {
+            url: "/api/user",
+            method: "get",
+            propertyName: false
+          }
+        }
+      }
+    }
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

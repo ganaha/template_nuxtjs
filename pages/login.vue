@@ -12,7 +12,7 @@
       </form>
       <p>token: {{ token }}</p>
       <p>message: {{ message }}</p>
-      <button @click="onClickGetUser" class="button--green">
+      <button @click="getUser" class="button--green">
         ユーザー取得
       </button>
       <nuxt-link to="/users" class="button--green">Users</nuxt-link>
@@ -33,34 +33,22 @@ export default {
       },
       token: "",
       message: "",
-      user: {},
-      users: []
+      user: {}
     };
   },
   methods: {
-    login() {
-      this.token = "";
-      this.message = "";
-      this.getToken()
-        .then(res => {
-          this.token = res.data;
-          this.$axios.setHeader("Authorization", `Bearer ${res.data}`);
-        })
+    async login() {
+      const res = await this.$auth
+        .loginWith("local", { data: this.post })
         .catch(err => {
-          console.log(err);
           this.message = err.message;
         });
+      this.token = res.data;
+      this.$router.push('/');
     },
-    onClickGetUser() {
-      this.getUser().then(res => {
-        this.message = res.data;
-      });
-    },
-    async getToken() {
-      return await this.$axios.post("/api/sanctum/token", this.post);
-    },
-    async getUser() {
-      return await this.$axios.get("/api/user");
+    getUser() {
+      console.log(this.$auth);
+      this.message = this.$auth.user;
     }
   }
 };
