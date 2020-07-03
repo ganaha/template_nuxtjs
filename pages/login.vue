@@ -12,10 +12,9 @@
       </form>
       <p>token: {{ token }}</p>
       <p>message: {{ message }}</p>
-      <button @click="getUser" class="button--green">
-        ユーザー取得
-      </button>
+      <button @click="getUser" class="button--green">ユーザー取得</button>
       <nuxt-link to="/users" class="button--green">Users</nuxt-link>
+      <nuxt-link to="/signup" class="button--green">Sign up</nuxt-link>
     </div>
   </div>
 </template>
@@ -43,11 +42,10 @@ export default {
         .catch(err => {
           this.message = err.message;
         });
-      this.token = res.data;
-      this.$router.push('/');
+      this.token = res.data.record.token;
+      // this.$router.push('/');
     },
     getUser() {
-      console.log(this.$auth);
       this.message = this.$auth.user;
     }
   }

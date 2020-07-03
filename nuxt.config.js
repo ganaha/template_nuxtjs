@@ -50,6 +50,15 @@ export default {
   axios: {
     baseURL: "http://localhost:8000"
   },
+  pwa: {
+    manifest: {
+      name: "My Awesome App",
+      lang: "ja"
+    },
+    workbox: {
+      dev: (process.env.NODE_ENV !== 'production')
+    }
+  },
   auth: {
     redirect: {
       login: "/login",
@@ -63,7 +72,7 @@ export default {
           login: {
             url: "/api/login",
             method: "post",
-            propertyName: false
+            propertyName: 'record.token'
           },
           logout: { url: "/api/logout", method: "get" },
           user: {
